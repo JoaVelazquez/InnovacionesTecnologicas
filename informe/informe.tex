@@ -67,11 +67,20 @@
 \newpage
 
 %=====================================================================
-\section{Para qué es este informe}
+\section{SkincareCo en pocas palabras}
 
-Durante la cursada trabajamos sobre una misma idea: SkincareCo, una aplicación que ayuda a armar una rutina de cuidado de la piel controlando que los productos sean compatibles entre sí. Cada clase nos pidió un entregable distinto y cada uno nos obligó a mirar la idea desde otro lado.
+Uno de cada dos usuarios de skincare no sabe si los productos que se pone en la cara pueden usarse juntos. SkincareCo resuelve eso: cargás tus productos y en segundos sabés si combinan, en qué orden aplicarlos de mañana y de noche, y por qué. Es la tranquilidad de una consulta profesional, sin turnos ni costo, todos los días.
 
-Este informe no vende la app. Sigue el orden de las clases y cuenta, para cada una, cómo hicimos el entregable, qué decisiones tomamos y qué nos llevamos. Al final respondemos la pregunta que atraviesa la materia: qué hace falta para que una innovación funcione.
+\smallskip
+\noindent
+\colorbox{suave}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep\relax}
+\vspace{4pt}
+\textbf{\color{acento}La propuesta.} Un semáforo de compatibilidad con reglas validadas por profesionales, una rutina armada y ordenada según tu tipo de piel y tu objetivo, y explicaciones en lenguaje simple. Gratis para el usuario.
+\vspace{4pt}
+\end{minipage}}
+\smallskip
+
+Llegamos a esta propuesta a lo largo de toda la cursada. Cada clase nos pidió un entregable distinto y cada uno nos obligó a mirar la idea desde otro lado. Este informe sigue ese orden: para cada clase cuenta cómo hicimos el entregable, qué decisiones tomamos y qué nos llevamos. Al final respondemos la pregunta que atraviesa la materia: qué hace falta para que una innovación funcione.
 
 \begin{table}[h]
 \centering
@@ -83,7 +92,7 @@ Este informe no vende la app. Sigue el orden de las clases y cuenta, para cada u
 1. Tecnología, innovación y startups & Matriz de ideación y evaluación & ¿Qué problema conviene atacar? & 3 ideas puntuadas con 7 criterios; SkincareCo 33/35 \\
 2. Problema, usuario y oportunidad de mercado & Validación del problema (TP Seminario 1) & ¿Existe el problema y quién lo sufre? & Encuesta de 681 respuestas, 4 entrevistas, 4 user personas y journey map \\
 3. Tecnologías disruptivas, BI, Big Data, Data Mining e IA & Mapa de oportunidad tecnológica & ¿Qué tecnología mejora qué decisión, con qué datos? & 6 dimensiones por idea y un experimento con métricas \\
-4. Design Thinking, creatividad y UX & Investigación de usuario y MVP & ¿Cuál es el insight y cómo lo probamos? & Insight, How Might We, 14 ideas, prototipo y 4 sprints \\
+4. Design Thinking, creatividad y UX & Investigación de usuario & ¿Cuál es el insight y cómo lo probamos? & Insight, How Might We, 14 ideas, prototipo y prueba \\
 5. Arquitectura estratégica de adopción y ventaja & Arquitectura de SkinCo y debate John Deere & ¿Por qué se adoptaría, qué la sostiene y cómo genera ingresos? & 6 bloques estratégicos, modelo de captura y una hipótesis crítica \\
 \bottomrule
 \end{tabularx}
@@ -220,27 +229,7 @@ Seguimos la guía de la clase en seis partes: evidencia, insight, desafío, idea
   \item \textbf{Prueba.} Fijamos metas de comprensión del semáforo (80\,\%) y de confianza en el orden sugerido (70\,\%). Son estimaciones que todavía hay que validar con un testeo real.
 \end{itemize}
 
-\subsection{Del prototipo al MVP: los sprints}
-
-El MVP se construyó en cuatro sprints con review y retro al final de cada uno.
-
-\begin{table}[h]
-\centering
-\small
-\begin{tabularx}{\linewidth}{@{}p{1.6cm}LL@{}}
-\toprule
-\textbf{Sprint} & \textbf{Qué hicimos} & \textbf{Qué dijo la retro} \\
-\midrule
-1 & Registro, login y primeras vistas de búsqueda y filtros & Costó arrancar y faltó comunicación; cada uno fue por su lado \\
-2 & Mocks, relevamiento de ingredientes y nueva monetización & Aplicamos el feedback; trabajar en parejas aligeró las tareas \\
-3 & Front y back; lógica del semáforo y preferencias & La diferencia de experiencia dejó a algunos afuera del avance \\
-4 & Paleta visual, tipo de piel y objetivo, marketplace & Cerramos la estrategia de monetización \\
-\bottomrule
-\end{tabularx}
-\caption{Resumen de los sprints del MVP.}
-\end{table}
-
-\clave{Un buen insight es una contradicción que explica el comportamiento; un dato suelto no alcanza. Escribir el desafío sin nombrar la app nos obligó a abrir alternativas antes de cerrar en una, y registrar por qué descartamos ideas fue tan útil como elegir la ganadora. En los sprints, las retros sirvieron cuando cambiamos algo concreto en el siguiente: la diferencia de experiencia del sprint 3 se resuelve repartiendo mejor las tareas, no con más horas.}
+\clave{Un buen insight es una contradicción que explica el comportamiento; un dato suelto no alcanza. Escribir el desafío sin nombrar la app nos obligó a abrir alternativas antes de cerrar en una, y registrar por qué descartamos ideas fue tan útil como elegir la ganadora.}
 
 %=====================================================================
 \section{Arquitectura estratégica de adopción y ventaja}
@@ -281,7 +270,7 @@ Por eso el núcleo (armar una rutina compatible) es gratis. Es lo que hace que e
 \toprule
 \textbf{Etapa} & \textbf{Fuente de ingresos} & \textbf{Condición para que funcione} \\
 \midrule
-MVP & Ninguna: rutina y compatibilidad gratis & Que el usuario active y vuelva \\
+Lanzamiento & Ninguna: rutina y compatibilidad gratis & Que el usuario active y vuelva \\
 Release 1 & Comisión por redirigir a tiendas; convenios con laboratorios que cargan sus productos & Tracción suficiente para negociar \\
 Release 2 & Consultas con profesionales dentro de la plataforma & Profesionales dispuestos a sumarse \\
 Release 3 & Datos agregados para laboratorios, tienda propia con cajas de productos, cursos & Una comunidad grande y confianza consolidada \\
@@ -292,7 +281,7 @@ Release 3 & Datos agregados para laboratorios, tienda propia con cajas de produc
 
 Para la etapa inicial no hace falta mucho capital. El experimento del mapa de oportunidad se hace sin app (concierge) y el gasto principal es el profesional que audita las reglas. Esa auditoría es también lo que habilita todo lo demás.
 
-La monetización la redefinimos en el sprint 2 después de una devolución, y el marketplace recién apareció en el sprint 4. En el camino detectamos una tensión que tenemos que resolver: vender datos agregados a laboratorios choca con la confianza del usuario, y son datos de salud. Si el usuario siente que la recomendación está comprada, deja de creer en el semáforo.
+En el camino detectamos una tensión que tenemos que resolver: vender datos agregados a laboratorios choca con la confianza del usuario, y son datos de salud. Si el usuario siente que la recomendación está comprada, deja de creer en el semáforo.
 
 \subsection{El caso John Deere}
 
@@ -325,7 +314,6 @@ Cada entregable cerraba con un pitch corto, y fuimos aprendiendo qué funciona:
   \item \textbf{Los prototipos sirven para aprender.} Un flujo, una tarea y un criterio de éxito alcanzan.
   \item \textbf{El negocio no puede contradecir la propuesta de valor.} Cobrar tarde y sin comprometer la confianza.
   \item \textbf{La estrategia se escribe con su punto débil.} La hipótesis crítica ordena las prioridades.
-  \item \textbf{Trabajar en equipo también se itera.} Las retros mejoraron el proceso cuando generaron cambios concretos.
 \end{enumerate}
 
 %=====================================================================
@@ -334,6 +322,8 @@ Cada entregable cerraba con un pitch corto, y fuimos aprendiendo qué funciona:
 Al empezar la cursada pensábamos que una buena idea con buena tecnología era suficiente. Hoy vemos que la tecnología fue la parte más fácil de definir. Lo difícil fue demostrar que el problema existe, entender por qué la gente actúa como actúa y diseñar un modelo que cobre sin romper la confianza.
 
 Una innovación exitosa necesita que se encuentren tres cosas: una tecnología que habilite algo nuevo, una experiencia que la gente quiera usar y un modelo de negocio que la sostenga. Si falta una, queda incompleta. Y lo que confirma que funcionó es la adopción, no el código.
+
+SkincareCo reúne las tres piezas: un dolor medido en 681 respuestas, una experiencia que resuelve la rutina en un solo paso y un modelo que cobra recién cuando el usuario ya confía. Lo que sigue es probarlo con usuarios reales, y ya sabemos cómo hacerlo.
 
 \medskip
 \noindent
