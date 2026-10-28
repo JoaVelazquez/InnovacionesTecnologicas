@@ -1,0 +1,360 @@
+\documentclass[11pt,a4paper]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[spanish,es-noshorthands,es-tabla]{babel}
+\usepackage{lmodern}
+\usepackage{microtype}
+\usepackage[margin=2.5cm]{geometry}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{array}
+\usepackage{enumitem}
+\usepackage[table]{xcolor}
+\usepackage{titlesec}
+\usepackage{fancyhdr}
+\usepackage[hidelinks]{hyperref}
+
+\definecolor{acento}{HTML}{B5576B}
+\definecolor{suave}{HTML}{F7ECEE}
+\definecolor{gris}{HTML}{555555}
+
+\titleformat{\section}{\Large\bfseries\color{acento}}{\thesection}{0.8em}{}
+\titleformat{\subsection}{\large\bfseries}{\thesubsection}{0.6em}{}
+\setlist{itemsep=2pt,topsep=4pt}
+\setlength{\parskip}{5pt}
+\setlength{\parindent}{0pt}
+\renewcommand{\arraystretch}{1.25}
+\newcolumntype{L}{>{\raggedright\arraybackslash}X}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small\color{gris}SkincareCo: lo que aprendimos}
+\fancyhead[R]{\small\color{gris}Innovaciones Tecnológicas, UADE}
+\fancyfoot[C]{\small\thepage}
+\renewcommand{\headrulewidth}{0.3pt}
+
+% Línea bajo el título de cada sección de clase
+\newcommand{\clase}[2]{%
+  \vspace{-6pt}{\small\color{gris}\textsc{Clase #1} \quad·\quad Entregable: #2}\par\medskip}
+
+% Caja para ideas clave
+\newcommand{\clave}[1]{%
+  \par\smallskip\noindent
+  \colorbox{suave}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep\relax}
+  \textbf{\color{acento}Aprendizaje.} #1
+  \end{minipage}}\par\smallskip}
+
+\begin{document}
+
+\begin{titlepage}
+  \centering
+  \vspace*{3cm}
+  {\small\color{gris}INNOVACIONES TECNOLÓGICAS \quad·\quad UADE\par}
+  \vspace{1.2cm}
+  {\Huge\bfseries\color{acento} Del problema a la innovación\par}
+  \vspace{0.5cm}
+  {\Large Cómo trabajamos SkincareCo y qué aprendimos en el camino\par}
+  \vspace{2.5cm}
+  {\large Francisco Tocco \quad·\quad Agustina Amed \quad·\quad Joaquín Velázquez\par}
+  \vspace{0.4cm}
+  {\color{gris}Grupo 8\par}
+  \vfill
+  {\color{gris}Octubre de 2026\par}
+\end{titlepage}
+
+\tableofcontents
+\newpage
+
+%=====================================================================
+\section{Para qué es este informe}
+
+Durante la cursada trabajamos sobre una misma idea: SkincareCo, una aplicación que ayuda a armar una rutina de cuidado de la piel controlando que los productos sean compatibles entre sí. Cada clase nos pidió un entregable distinto y cada uno nos obligó a mirar la idea desde otro lado.
+
+Este informe no vende la app. Sigue el orden de las clases y cuenta, para cada una, cómo hicimos el entregable, qué decisiones tomamos y qué nos llevamos. Al final respondemos la pregunta que atraviesa la materia: qué hace falta para que una innovación funcione.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}>{\raggedright\arraybackslash}p{3.6cm}>{\raggedright\arraybackslash}p{3.3cm}LL@{}}
+\toprule
+\textbf{Clase} & \textbf{Entregable} & \textbf{Pregunta que respondía} & \textbf{Qué obtuvimos} \\
+\midrule
+1. Tecnología, innovación y startups & Matriz de ideación y evaluación & ¿Qué problema conviene atacar? & 3 ideas puntuadas con 7 criterios; SkincareCo 33/35 \\
+2. Problema, usuario y oportunidad de mercado & Validación del problema (TP Seminario 1) & ¿Existe el problema y quién lo sufre? & Encuesta de 681 respuestas, 4 entrevistas, 4 user personas y journey map \\
+3. Tecnologías disruptivas, BI, Big Data, Data Mining e IA & Mapa de oportunidad tecnológica & ¿Qué tecnología mejora qué decisión, con qué datos? & 6 dimensiones por idea y un experimento con métricas \\
+4. Design Thinking, creatividad y UX & Investigación de usuario y MVP & ¿Cuál es el insight y cómo lo probamos? & Insight, How Might We, 14 ideas, prototipo y 4 sprints \\
+5. Arquitectura estratégica de adopción y ventaja & Arquitectura de SkinCo y debate John Deere & ¿Por qué se adoptaría, qué la sostiene y cómo genera ingresos? & 6 bloques estratégicos, modelo de captura y una hipótesis crítica \\
+\bottomrule
+\end{tabularx}
+\caption{Clases y entregables de la cursada.}
+\end{table}
+
+La lógica fue siempre la misma: primero el problema, después el usuario, recién después la tecnología y, al final, el negocio y la estrategia.
+
+%=====================================================================
+\section{Tecnología, innovación y startups tecnológicas}
+\clase{1}{matriz de ideación y evaluación}
+
+\subsection{Cómo lo hicimos}
+
+La primera clase dejó una idea que repetimos todo el año: tecnología no es innovación. Una invención es una novedad técnica; una innovación es algo nuevo que la gente adopta porque le genera valor. Con eso en mente, el primer entregable pedía tres problemas candidatos, cada uno con su usuario y la tecnología que podría ayudar.
+
+No nos quedamos con la primera idea. Pusimos tres en la misma matriz y para cada una definimos el tipo de innovación:
+
+\begin{itemize}
+  \item \textbf{Runner Up}, una red para que los corredores encuentren grupos y rutas (integración tecnológica).
+  \item \textbf{SentinelAI}, un copiloto legal para equipos de empresas B2B (nueva forma de resolver).
+  \item \textbf{SkincareCo}, un motor de compatibilidad entre ingredientes y productos (uso novedoso de datos).
+\end{itemize}
+
+Después las evaluamos con los mismos siete criterios, cada uno de 1 a 5.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lccc@{}}
+\toprule
+\textbf{Criterio} & \textbf{Runner Up} & \textbf{SentinelAI} & \textbf{SkincareCo} \\
+\midrule
+Claridad del problema & 4 & 5 & 5 \\
+Usuario concreto & 5 & 4 & 5 \\
+Dolor del problema & 3 & 3 & 5 \\
+Solución actual deficiente & 5 & 3 & 5 \\
+Potencial tecnológico & 4 & 4 & 4 \\
+Diferenciación & 3 & 3 & 4 \\
+Validación (¿hablamos con usuarios esta semana?) & 5 & \textbf{1} & 5 \\
+\midrule
+\textbf{Total (sobre 35)} & 29 & 23 & \textbf{33} \\
+\bottomrule
+\end{tabular}
+\caption{Matriz de evaluación de las tres ideas.}
+\end{table}
+
+\subsection{Qué destacamos}
+
+SentinelAI tenía el problema más claro de los tres, pero no teníamos forma de hablar con abogados in-house. Ese 1/5 en validación la dejó última. Runner Up tenía usuarios accesibles pero un dolor moderado y un riesgo grande: sin suficientes corredores en la misma zona y horario, la app no sirve.
+
+\clave{Una idea con un problema claro pero sin acceso a usuarios no se puede validar, y lo que no se puede validar no se puede construir con criterio. Comparar ideas con la misma vara nos sacó del apego a la propia.}
+
+%=====================================================================
+\section{Problema, usuario y oportunidad de mercado}
+\clase{2}{validación del problema (TP Seminario 1)}
+
+\subsection{Cómo lo hicimos}
+
+La clase 2 nos pidió salir a buscar evidencia. Para eso usamos el TP del seminario, que ya tenía trabajo de campo. Partimos de una observación del mercado: el skincare crece, se compra cada vez más online y las recomendaciones llegan por redes e influencers. El usuario promedio compra por impulso o por marca, sin saber qué ingredientes tiene el producto ni si combinan con lo que ya usa.
+
+Para comprobarlo usamos dos herramientas con objetivos distintos:
+
+\begin{itemize}
+  \item \textbf{Encuesta online (681 respuestas)} para medir. De 539 personas con rutina, el 52,3\,\% no sabía si sus productos eran compatibles. Del resto, que sí sabía, el 19,5\,\% igual tuvo irritación, acné o enrojecimiento.
+  \item \textbf{Entrevistas} para entender. Hablamos con tres personas con afecciones en la piel (eczema, acné, rosácea) y con una cosmetóloga matriculada. Aparecieron historias concretas: un tónico que dejó ronchas por días sin que el paciente supiera qué tenía, o un tratamiento que generó ardor.
+\end{itemize}
+
+Con eso armamos cuatro user personas: dos consumidoras (una joven guiada por influencers y una adulta sin tiempo) y dos del lado de la oferta (el profesional de la piel y el marketing de un laboratorio). El journey map recorrió seis etapas: detectar un problema en la piel, consultar, buscar productos, comprarlos, aplicar la rutina y sostenerla.
+
+\subsection{Qué destacamos}
+
+El problema quedó formulado en palabras del usuario: \emph{``quiero armar una rutina, pero hay componentes que no pueden mezclarse y no sé cuáles son''}. Esa frase y los dos números de la encuesta sostuvieron todos los entregables siguientes. La oportunidad también quedó clara: la consulta dermatológica resuelve el problema, pero es cara, demorada y no acompaña el día a día.
+
+\clave{La encuesta mide cuánto pasa algo; la entrevista explica por qué pasa. Necesitamos las dos. También notamos que algunas preguntas que hicimos (por ejemplo, ``¿estarías dispuesta a responder consultas de forma remunerada?'') piden una opinión sobre el futuro. Después de ver The Mom Test entendimos que esas respuestas valen poco como evidencia: lo que pesa es lo que la persona ya hizo.}
+
+%=====================================================================
+\section{Tecnologías disruptivas, BI, Big Data, Data Mining e IA}
+\clase{3}{mapa de oportunidad tecnológica}
+
+\subsection{Cómo lo hicimos}
+
+El mapa de oportunidad tecnológica tiene seis dimensiones: problema y usuario, tarea o decisión, datos necesarios, capacidad elegida, valor y riesgo, y experimento con métrica. Lo aplicamos a las tres ideas de la matriz. La regla de la clase fue no arrancar por ``queremos usar IA'' sino por la decisión que el usuario necesita mejorar.
+
+Para SkincareCo esa decisión es concreta: \emph{qué productos combinar, en qué orden aplicarlos de mañana y de noche, y con qué frecuencia}. Hoy se toma por confianza en un influencer, por Google o por consejo de farmacia.
+
+Después listamos los datos con su fuente, frecuencia, calidad y permiso: la composición INCI de cada producto, las reglas de compatibilidad entre activos, el perfil del usuario (tipo de piel, objetivo, embarazo, medicación), su uso real y reacciones, y el precio de cada producto. El perfil incluye datos de salud, así que requiere consentimiento explícito según la Ley 25.326.
+
+\subsection{La capacidad que elegimos y por qué}
+
+\begin{itemize}
+  \item \textbf{Núcleo: motor de reglas auditable.} El semáforo de compatibilidad no es un modelo probabilístico. Una recomendación que puede dañar la piel tiene que poder explicarse y rastrearse hasta su fuente.
+  \item \textbf{IA en los bordes.} OCR para escanear la etiqueta y un modelo de lenguaje para normalizar nombres de ingredientes y explicar en lenguaje claro por qué dos productos no van juntos.
+  \item \textbf{Data Mining} sobre el uso y las reacciones reportadas, para afinar las reglas con evidencia propia.
+\end{itemize}
+
+\subsection{El experimento}
+
+Diseñamos dos pruebas en paralelo durante cuatro semanas, sin necesidad de tener la app terminada: un dermatólogo revisa a ciegas 100 rutinas generadas, y 40 usuarios reales cargan sus productos y reciben la rutina armada a mano con el mismo motor (prueba concierge).
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabular}{@{}lcl@{}}
+\toprule
+\textbf{Métrica} & \textbf{Meta} & \textbf{Qué mide} \\
+\midrule
+Seguridad & 95\,\% & rutinas sin conflictos según la auditoría \\
+Cobertura & 80\,\% & productos escaneados reconocidos por la base \\
+Retorno & 60\,\% & usuarios que vuelven a los 14 días \\
+\bottomrule
+\end{tabular}
+\caption{Métricas del experimento propuesto.}
+\end{table}
+
+Al cruzar el puntaje de la matriz con la incertidumbre de cada caso, el orden quedó así: SkincareCo avanza ya, Runner Up necesita probar primero un piloto en un solo barrio, y SentinelAI no se construye hasta hacer cinco entrevistas con abogados.
+
+\clave{Elegir la tecnología fue una decisión de confianza más que de sofisticación. Pusimos la IA donde un error es tolerable (leer una etiqueta) y reglas verificables donde un error lastima a alguien. También vimos que el riesgo más grande no era técnico: si el producto que el usuario escanea no está en la base, la experiencia se rompe en el primer uso.}
+
+%=====================================================================
+\section{Design Thinking, creatividad y experiencia de usuario}
+\clase{4}{investigación de usuario, del insight al prototipo}
+
+\subsection{Cómo lo hicimos}
+
+Seguimos la guía de la clase en seis partes: evidencia, insight, desafío, ideas, prototipo y prueba.
+
+\begin{itemize}
+  \item \textbf{Evidencia.} Hechos de la encuesta, dos episodios de las entrevistas y la fricción principal: costo, riesgo y falta de constancia.
+  \item \textbf{Insight.} Lo formulamos como una tensión: \emph{cuantos más productos prueba para mejorar su piel, más aumenta el riesgo de dañarla por combinarlos mal.}
+  \item \textbf{Desafío (How Might We).} ¿Cómo podríamos ayudarlo a saber si un producto es compatible con su rutina antes de aplicarlo? La pregunta no nombra ninguna funcionalidad.
+  \item \textbf{Ideas.} Relevamos 14 alternativas en una grilla de prioridad y refinamiento. Elegimos el motor de compatibilidad tipo semáforo y dejamos para releases futuros los cursos, el foro, la suscripción VIP y la expansión a otros rubros.
+  \item \textbf{Prototipo.} Un solo flujo: ingresar un producto, ver si es compatible y recibir el orden de aplicación. Criterio de éxito: armar una rutina de tres productos sin abandonar ni pedir ayuda.
+  \item \textbf{Prueba.} Fijamos metas de comprensión del semáforo (80\,\%) y de confianza en el orden sugerido (70\,\%). Son estimaciones que todavía hay que validar con un testeo real.
+\end{itemize}
+
+\subsection{Del prototipo al MVP: los sprints}
+
+El MVP se construyó en cuatro sprints con review y retro al final de cada uno.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}p{1.6cm}LL@{}}
+\toprule
+\textbf{Sprint} & \textbf{Qué hicimos} & \textbf{Qué dijo la retro} \\
+\midrule
+1 & Registro, login y primeras vistas de búsqueda y filtros & Costó arrancar y faltó comunicación; cada uno fue por su lado \\
+2 & Mocks, relevamiento de ingredientes y nueva monetización & Aplicamos el feedback; trabajar en parejas aligeró las tareas \\
+3 & Front y back; lógica del semáforo y preferencias & La diferencia de experiencia dejó a algunos afuera del avance \\
+4 & Paleta visual, tipo de piel y objetivo, marketplace & Cerramos la estrategia de monetización \\
+\bottomrule
+\end{tabularx}
+\caption{Resumen de los sprints del MVP.}
+\end{table}
+
+\clave{Un buen insight es una contradicción que explica el comportamiento; un dato suelto no alcanza. Escribir el desafío sin nombrar la app nos obligó a abrir alternativas antes de cerrar en una, y registrar por qué descartamos ideas fue tan útil como elegir la ganadora. En los sprints, las retros sirvieron cuando cambiamos algo concreto en el siguiente: la diferencia de experiencia del sprint 3 se resuelve repartiendo mejor las tareas, no con más horas.}
+
+%=====================================================================
+\section{Arquitectura estratégica de adopción y ventaja}
+\clase{5}{arquitectura de SkinCo y debate sobre John Deere}
+
+\subsection{Cómo lo hicimos}
+
+En la clase 5 la pregunta cambió: ya no qué construir, sino por qué la gente lo adoptaría y qué haría difícil reemplazarlo. Armamos la arquitectura en seis bloques y referenciamos cada uno a su fuente en el TP.
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}p{2.9cm}L@{}}
+\toprule
+\textbf{Bloque} & \textbf{SkincareCo} \\
+\midrule
+Tesis causal & Señal (52,3\,\% no sabe si sus productos combinan) $\rightarrow$ capacidad (semáforo y rutina) $\rightarrow$ conducta $\rightarrow$ resultado (menos reacciones, rutina sostenida) \\
+Motor de adopción & Hoy compra por impulso; la fricción es no saber a quién consultar ni tener tiempo; el avance es el chequeo inmediato desde el primer uso \\
+Complementos & Usuarios, dermatólogos y cosmetólogos, laboratorios, base de ingredientes. La dependencia clave es la validación profesional \\
+Bucle estratégico & Cada rutina cargada afina la recomendación; alarmas y foros sostienen el uso \\
+Apropiación & Comisiones, marketplace, datos agregados, cursos. La barrera es el historial de uso más la validación acumulada \\
+Hipótesis crítica & El usuario tiene que confiar más en el semáforo que en un influencer. Sin respaldo profesional visible, el ciclo no arranca \\
+\bottomrule
+\end{tabularx}
+\caption{Arquitectura estratégica de adopción y ventaja.}
+\end{table}
+
+\subsection{Cómo conseguiríamos plata}
+
+Además de buscar fuentes de ingreso, tuvimos que decidir en qué momento cobrar sin espantar al usuario. La clase lo resume bien: crear valor no garantiza capturarlo, y capturarlo antes de entregarlo destruye la adopción.
+
+Por eso el núcleo (armar una rutina compatible) es gratis. Es lo que hace que el usuario pruebe y vuelva. El dinero llega por capas, a medida que crece la base de usuarios:
+
+\begin{table}[h]
+\centering
+\small
+\begin{tabularx}{\linewidth}{@{}p{2cm}LL@{}}
+\toprule
+\textbf{Etapa} & \textbf{Fuente de ingresos} & \textbf{Condición para que funcione} \\
+\midrule
+MVP & Ninguna: rutina y compatibilidad gratis & Que el usuario active y vuelva \\
+Release 1 & Comisión por redirigir a tiendas; convenios con laboratorios que cargan sus productos & Tracción suficiente para negociar \\
+Release 2 & Consultas con profesionales dentro de la plataforma & Profesionales dispuestos a sumarse \\
+Release 3 & Datos agregados para laboratorios, tienda propia con cajas de productos, cursos & Una comunidad grande y confianza consolidada \\
+\bottomrule
+\end{tabularx}
+\caption{Modelo de captura de valor por etapa.}
+\end{table}
+
+Para la etapa inicial no hace falta mucho capital. El experimento del mapa de oportunidad se hace sin app (concierge) y el gasto principal es el profesional que audita las reglas. Esa auditoría es también lo que habilita todo lo demás.
+
+La monetización la redefinimos en el sprint 2 después de una devolución, y el marketplace recién apareció en el sprint 4. En el camino detectamos una tensión que tenemos que resolver: vender datos agregados a laboratorios choca con la confianza del usuario, y son datos de salud. Si el usuario siente que la recomendación está comprada, deja de creer en el semáforo.
+
+\subsection{El caso John Deere}
+
+En el debate sobre Deere tuvimos que elegir entre dos hipótesis: la integración reduce riesgo y mejora resultados (A), o la dependencia limita la adopción y la confianza (B). Defendimos la B. La integración aporta valor real, pero sus beneficios se acumulan de a poco y los costos de la dependencia estallan de golpe: la demanda de la FTC, USD 99 millones en acuerdos con agricultores y diez años de supervisión regulatoria. Y un acuerdo legal no repara la confianza perdida.
+
+Llevado a SkincareCo, la lección es directa. Queremos que el usuario se quede porque su historial y sus rutinas le sirven, no porque no pueda irse. Si la retención se vuelve encierro, perdemos lo único que nos diferencia: la confianza.
+
+\clave{La hipótesis crítica fue lo más valioso del entregable. Escribir qué supuesto rompe todo el razonamiento nos mostró que nuestro riesgo principal está en la confianza del usuario, antes que en la tecnología o el mercado. Por eso el primer paso concreto es conseguir el profesional que audite las reglas. Y el modelo de negocio tiene que cuidar esa misma confianza: si lo que vendemos es una recomendación confiable, cualquier ingreso que la ponga en duda nos cuesta más de lo que nos deja.}
+
+%=====================================================================
+\section{Cómo lo presentaríamos}
+
+Cada entregable cerraba con un pitch corto, y fuimos aprendiendo qué funciona:
+
+\begin{itemize}
+  \item \textbf{Empezar por el dato, no por la app.} ``Uno de cada dos no sabe si sus productos combinan'' engancha más que cualquier descripción de pantallas.
+  \item \textbf{Seguir la estructura problema, insight, prototipo, aprendizaje.} Es la que pedía la guía y obliga a mostrar lo que se probó, no solo lo que se imaginó.
+  \item \textbf{Mostrar un solo flujo.} El flujo crítico (cargar un producto y ver el semáforo) explica la propuesta en segundos.
+  \item \textbf{Decir el riesgo en voz alta.} Nombrar la hipótesis crítica y el experimento que la pone a prueba da más credibilidad que esconderla.
+  \item \textbf{Adaptar el mensaje a quien escucha.} A un usuario le importa su piel; a un laboratorio, información confiable de consumidores; a un profesional, conseguir y fidelizar pacientes.
+\end{itemize}
+
+%=====================================================================
+\section{Lo que nos llevamos}
+
+\begin{enumerate}
+  \item \textbf{El problema va primero.} Los dos números de la encuesta guiaron cada decisión posterior.
+  \item \textbf{Validar es poder hablar con usuarios.} Descartamos una idea con buen problema porque no teníamos acceso a quienes lo sufren.
+  \item \textbf{La tecnología se elige por la decisión que mejora}, y en un tema de salud, por cuánto se puede explicar.
+  \item \textbf{Los prototipos sirven para aprender.} Un flujo, una tarea y un criterio de éxito alcanzan.
+  \item \textbf{El negocio no puede contradecir la propuesta de valor.} Cobrar tarde y sin comprometer la confianza.
+  \item \textbf{La estrategia se escribe con su punto débil.} La hipótesis crítica ordena las prioridades.
+  \item \textbf{Trabajar en equipo también se itera.} Las retros mejoraron el proceso cuando generaron cambios concretos.
+\end{enumerate}
+
+%=====================================================================
+\section{Conclusión: qué necesita una innovación para ser exitosa}
+
+Al empezar la cursada pensábamos que una buena idea con buena tecnología era suficiente. Hoy vemos que la tecnología fue la parte más fácil de definir. Lo difícil fue demostrar que el problema existe, entender por qué la gente actúa como actúa y diseñar un modelo que cobre sin romper la confianza.
+
+Una innovación exitosa necesita que se encuentren tres cosas: una tecnología que habilite algo nuevo, una experiencia que la gente quiera usar y un modelo de negocio que la sostenga. Si falta una, queda incompleta. Y lo que confirma que funcionó es la adopción, no el código.
+
+\medskip
+\noindent
+\colorbox{acento}{\begin{minipage}{\dimexpr\linewidth-2\fboxsep\relax}
+\vspace{6pt}
+\color{white}\large
+\textbf{Idea central.} Una innovación es exitosa cuando resuelve un problema real, validado con quienes lo sufren, de una forma en la que confían lo suficiente como para cambiar su conducta, y con un modelo que captura valor sin romper esa confianza.
+\vspace{6pt}
+\end{minipage}}
+
+%=====================================================================
+\appendix
+\section{Fuentes del trabajo}
+
+\begin{itemize}
+  \item Encuesta propia en Google Forms, 681 respuestas.
+  \item Entrevistas a Argenis Soto, Guido Villanueva, Victoria Amed y a la cosmetóloga Ivana Gisela Bulacio.
+  \item Fortune Business Insights (2021), \emph{Skincare Market Size, Share \& COVID-19 Impact Analysis}.
+  \item Mordor Intelligence (2022), \emph{Argentina Beauty and Personal Care Products Market}.
+  \item FTC, acuerdo con Deere \& Co. (julio de 2026); acuerdo colectivo con agricultores (abril de 2026).
+  \item Material de las clases 1 a 5 y guías de aplicación al proyecto, Innovaciones Tecnológicas, UADE.
+\end{itemize}
+
+\end{document}
